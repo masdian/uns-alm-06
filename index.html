@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Aljabar Linier Matriks</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="oleh Riana Hadiana" />
+    <script src="libs/header-attrs-2.21/header-attrs.js"></script>
+    <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <link href="libs/remark-css-0.0.1/default-fonts.css" rel="stylesheet" />
+    <link href="libs/tile-view-0.2.6/tile-view.css" rel="stylesheet" />
+    <script src="libs/tile-view-0.2.6/tile-view.js"></script>
+    <link href="libs/animate.css-3.7.2/animate.xaringan.css" rel="stylesheet" />
+    <link href="libs/tachyons-4.12.0/tachyons.min.css" rel="stylesheet" />
+    <link href="libs/panelset-0.2.6/panelset.css" rel="stylesheet" />
+    <script src="libs/panelset-0.2.6/panelset.js"></script>
+    <script src="libs/fabric-4.3.1/fabric.min.js"></script>
+    <link href="libs/xaringanExtra-scribble-0.0.1/scribble.css" rel="stylesheet" />
+    <script src="libs/xaringanExtra-scribble-0.0.1/scribble.js"></script>
+    <script>document.addEventListener('DOMContentLoaded', function() { window.xeScribble = new Scribble({"pen_color":["#FF0000"],"pen_size":3,"eraser_size":30,"palette":[]}) })</script>
+    <script src="libs/xaringanExtra-webcam-0.0.1/webcam.js"></script>
+    <script id="xaringanExtra-webcam-options" type="application/json">{"width":"200","height":"200","margin":"1em"}</script>
+    <script src="libs/mark.js-8.11.1/mark.min.js"></script>
+    <link href="libs/xaringanExtra-search-0.0.1/search.css" rel="stylesheet" />
+    <script src="libs/xaringanExtra-search-0.0.1/search.js"></script>
+    <script>window.addEventListener('load', function() { window.xeSearch = new RemarkSearch({"position":"bottom-left","caseSensitive":false,"showIcon":true,"autoSearch":true}) })</script>
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+.title[
+# Aljabar Linier Matriks
+]
+.subtitle[
+## Pertemuan 06 <br> Sistem Persamaan Linier (SPL)
+]
+.author[
+### oleh Riana Hadiana
+]
+.institute[
+### Universitas Serang Raya
+]
+
+---
+
+
+
+
+
+
+
+
+<div>
+<style type="text/css">.xaringan-extra-logo {
+width: 110px;
+height: 128px;
+z-index: 0;
+background-image: url(Unsera.png);
+background-size: contain;
+background-repeat: no-repeat;
+position: absolute;
+top:1em;right:1em;
+}
+</style>
+<script>(function () {
+  let tries = 0
+  function addLogo () {
+    if (typeof slideshow === 'undefined') {
+      tries += 1
+      if (tries < 10) {
+        setTimeout(addLogo, 100)
+      }
+    } else {
+      document.querySelectorAll('.remark-slide-content:not(.title-slide):not(.inverse):not(.hide_logo)')
+        .forEach(function (slide) {
+          const logo = document.createElement('div')
+          logo.classList = 'xaringan-extra-logo'
+          logo.href = null
+          slide.appendChild(logo)
+        })
+    }
+  }
+  document.addEventListener('DOMContentLoaded', addLogo)
+})()</script>
+</div>
+
+
+
+
+
+.pull-left[
+
+# .purple[**Outline**]
+
+- ## Pengertian Sistem Persamaan Linier (SPL) &lt;br&gt;
+- ## Solusi SPL &lt;br&gt;
+- ## Kekonsistenan SPL 
+
+
+]
+
+.pull-right[
+
+&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
+
+![](alin.png)
+]
+
+---
+
+class: center, middle, inverse
+
+# .red[**Sistem Persamaan Linier**]
+
+---
+
+.pull.center[
+### **Sistem Persamaan Linier**]
+
+- ### Terdiri atas beberapa persamaan
+- ### Seluruh persamaan berbentuk linear
+
+
+### `\(\qquad x+2y=5 \qquad \qquad \qquad \begin{align*}x+2y&amp;=5 \\ 2x+4&amp;=4 \end{align*}\)`
+### `\(\begin{matrix} \begin{align*}5x+2y-3z&amp;=4 \\ x+y+z&amp;=3 \end{align*} \end{matrix}\)` `\(\qquad \qquad \begin{align*}2x+y-5z&amp;=-4 \\ x-2y+3z&amp;=4 \\ 2x-4y-z &amp;= -6\end{align*}\)`
+
+---
+
+.pull.center[
+### **Solusi bagi SPL**]
+
+### `\(\begin{align*}x+2y&amp;=5 \\ 2x+y&amp;=4 \end{align*} \Rightarrow(x,y)=(1,2)\text{ merupakan solusi}\)`
+
+### `\(\begin{align*}x+2y&amp;=5 \\ 2x+y&amp;=4 \end{align*} \Rightarrow\begin{array}{ll}(x,y,z)=(1,1,0)\text{ merupakan solusi}\\(x,y,z)=(0,\frac{1}{2},1)\text{ juga merupakan solusi}\end{array}\)`
+
+### `\(\begin{align*}x+2y&amp;=5 \\ 2x+4y&amp;=10 \end{align*} \Rightarrow\begin{array}{ll}\text{tidak ada }(x,y)\text{ yang memenuhi} \\ \text{SPL ini} \color{red}{\textbf{ tidak memiliki}}\text{ solusi}\end{array}\)`
+
+---
+
+.pull.center[
+### **Kategori SPL**]
+
+![](spl.jpg)
+
+---
+
+.pull.center[
+### **SPL Homogen**]
+
+.pull-left[
+
+### SPL Homogen:&lt;br&gt;Seluruh ruas kanannya bernilai .red[**0**] (nol)
+
+### Sifat SPL Homogen:&lt;br&gt;Selalu konsisten (selalu ada solusi)
+
+### Salah satu solusinya adalah semua variabel bernilai .red[**0**] (nol)
+
+
+]
+
+.pull-right[
+
+### `\(\begin{align*}x+2y&amp;=0 \\ 2x+y&amp;=0 \end{align*}\)`
+### `\(\begin{align*}3x+2y+4z&amp;=0 \\ 2x+2y+3z&amp;=0 \end{align*}\)`
+]
+
+---
+
+class: center, middle, inverse
+
+# .red[**Solusi Sistem Persamaan Linier**]
+
+---
+
+.pull.center[
+### **Menentukan Solusi SPL**]
+
+.pull-left[
+
+### .red[**Metode Substitusi**]
+
+1. ### Menyatakan suatu variable sebagai fungsi dari variable yang lain berdasarkan suatu persamaan
+1. ### Mensubstitusikan variable di persamaan lain dengan variable dari bagian 1)
+
+]
+
+.pull-right[
+  
+### `\(\begin{align*}x+2y&amp;=5 \\ 2x+y&amp;=4 \end{align*}\)`
+
+]
+
+---
+
+.pull.center[
+### **Menentukan Solusi SPL**]
+
+### .red[**Metode Substitusi**]
+
+### `\(\begin{align*}2x+y-5z&amp;=-4 \\ x-2y+3z&amp;=4 \\ 2x-4y-z&amp;=-6 \end{align*}\)`
+
+
+
+---
+
+.pull.center[
+### **Menentukan Solusi SPL**]
+
+.pull-left[
+
+### .red[**Metode Eliminasi**]
+
+1. ### Menggunakan 2 persamaan untuk menghilangkan (mengiliminasi) salah satu variable sehingga diperoleh persamaan yang lebih sederhana
+1. ### Terus dilakukan hingga variable tersisa dapat ditemukan solusinya
+
+]
+
+.pull-right[
+  
+### `\(\begin{align*}x+2y&amp;=5 \\ 2x+y&amp;=4 \end{align*}\)`
+
+]
+
+---
+
+.pull.center[
+### **Menentukan Solusi SPL**]
+
+### .red[**Metode Eliminasi**]
+
+### `\(\begin{align*}2x+y-5z&amp;=-4 \\ x-2y+3z&amp;=4 \\ 2x-4y-z&amp;=-6 \end{align*}\)`
+
+---
+
+.pull.center[
+### **SPL dalam Notasi Matriks**]
+
+![](axsamadengan_c.jpg)
+
+---
+
+.pull.center[
+### **Metode Cramer**]
+
+- ### Diambil dari matematikawan Swiss, Gabriel Cramer (1704 – 1752).
+- ### Digunakan untuk mencari solusi SPL dengan banyaknya variabel sama dengan banyaknya persamaan.
+- ### Dalam SPL `\(\textbf{AX}=\textbf{B}\)`, matriks `\(\textbf{A}\)` adalah matriks persegi dengan `\(\text{det}(\textbf{A})\ne 0\)`.
+- ### Solusi SPL `\(\textbf{AX}=\textbf{B}\)` adalah
+
+.pull-left[
+### `$$x_i=\frac{\text{det}(\textbf{A}_i)}{\text{det}(\textbf{A})}$$`
+]
+
+.pull-right[
+### `\(x_i\)` adalah elemen `\(\textbf{X}\)` ke-i
+### `\(\textbf{A}_i\)` adalah matriks `\(\textbf{A}\)` dengan kolom ke- `\(i\)` diganti oleh `\(\textbf{B}\)`
+]
+
+---
+
+.pull.center[
+### **Metode Cramer**]
+
+### `\(\begin{align*}x+2y&amp;=5 \\ 2x+y&amp;=4 \end{align*}\)`
+### `\(\begin{bmatrix} 1&amp;2 \\ 2&amp; 1 \end{bmatrix}\begin{bmatrix} x \\ y  \end{bmatrix}=\begin{bmatrix} 5 \\ 4 \end{bmatrix}\)`
+
+---
+
+.pull.center[
+### **Metode Cramer**]
+
+### `\(\begin{align*}2x+y-5z&amp;=-4 \\ x-2y+3z&amp;=4 \\ 2x-4y-z&amp;=-6 \end{align*}\)`
+
+### `\(\begin{bmatrix} 2&amp;1&amp;-5 \\ 1&amp;-2&amp;3 \\ 2&amp;-4&amp;-1 \end{bmatrix}\begin{bmatrix} x \\ y \\ z \end{bmatrix}=\begin{bmatrix} -4 \\ 6 \\ 4 \end{bmatrix}\)`
+
+---
+
+.pull.center[
+### **Eliminasi Gauss-Jordan**]
+
+![](gauss.jpg)
+
+---
+
+.pull.center[
+### **Eliminasi Gauss-Jordan**]
+
+### `\(\begin{align*}x+2y&amp;=5 \\ 2x+y&amp;=4 \end{align*}\)`
+### `\(\begin{bmatrix} 1&amp;2 \\ 2&amp; 1 \end{bmatrix}\begin{bmatrix} x \\ y  \end{bmatrix}=\begin{bmatrix} 5 \\ 4 \end{bmatrix}\)`
+
+---
+
+.pull.center[
+### **Eliminasi Gauss-Jordan**]
+
+### `\(\begin{align*}2x+y-5z&amp;=-4 \\ x-2y+3z&amp;=4 \\ 2x-4y-z&amp;=-6 \end{align*}\)`
+
+### `\(\begin{bmatrix} 2&amp;1&amp;-5 \\ 1&amp;-2&amp;3 \\ 2&amp;-4&amp;-1 \end{bmatrix}\begin{bmatrix} x \\ y \\ z \end{bmatrix}=\begin{bmatrix} -4 \\ 6 \\ 4 \end{bmatrix}\)`
+
+---
+
+class: center, middle, inverse
+
+# .red[**Kekonsistenan SPL**]
+
+---
+
+.pull.center[
+### **OBE, Determinan, dan Pangkat Matriks**]
+
+![](obe_rank.jpg)
+
+---
+
+.pull.center[
+### **Pangkat Matriks dan Kekonsistenan SPL**]
+
+![](konsisten.jpg)
+
+
+---
+
+.pull.center[
+### **Pangkat Matriks dan Kekonsistenan SPL**]
+
+![](konsisten1.jpg)
+
+---
+
+class: inverse, middle, center
+
+# Thank you
+# See you next week!
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false,
+"ratio": "16:9"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
