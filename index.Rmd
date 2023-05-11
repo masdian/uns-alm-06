@@ -97,7 +97,7 @@ class: center, middle, inverse
 
 ### $\begin{align*}x+2y&=5 \\ 2x+y&=4 \end{align*} \Rightarrow(x,y)=(1,2)\text{ merupakan solusi}$
 
-### $\begin{align*}x+2y&=5 \\ 2x+y&=4 \end{align*} \Rightarrow\begin{array}{ll}(x,y,z)=(1,1,0)\text{ merupakan solusi}\\(x,y,z)=(0,\frac{1}{2},1)\text{ juga merupakan solusi}\end{array}$
+### $\begin{align*} 3x+2y +4z&=5 \\ 2x+2y+3z&=4 \end{align*} \Rightarrow\begin{array}{ll}(x,y,z)=(1,1,0)\text{ merupakan solusi}\\(x,y,z)=(0,\frac{1}{2},1)\text{ juga merupakan solusi}\end{array}$
 
 ### $\begin{align*}x+2y&=5 \\ 2x+4y&=10 \end{align*} \Rightarrow\begin{array}{ll}\text{tidak ada }(x,y)\text{ yang memenuhi} \\ \text{SPL ini} \color{red}{\textbf{ tidak memiliki}}\text{ solusi}\end{array}$
 
@@ -261,7 +261,7 @@ class: center, middle, inverse
 
 ### $\begin{align*}2x+y-5z&=-4 \\ x-2y+3z&=4 \\ 2x-4y-z&=-6 \end{align*}$
 
-### $\begin{bmatrix} 2&1&-5 \\ 1&-2&3 \\ 2&-4&-1 \end{bmatrix}\begin{bmatrix} x \\ y \\ z \end{bmatrix}=\begin{bmatrix} -4 \\ 6 \\ 4 \end{bmatrix}$
+### $\begin{bmatrix} 2&1&-5 \\ 1&-2&3 \\ 2&-4&-1 \end{bmatrix}\begin{bmatrix} x \\ y \\ z \end{bmatrix}=\begin{bmatrix} -4 \\ 4 \\ -6 \end{bmatrix}$
 
 ---
 
